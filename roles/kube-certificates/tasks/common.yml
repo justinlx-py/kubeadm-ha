@@ -128,7 +128,7 @@
 
 - name: 根据 sa 私钥创建公钥
   shell: openssl rsa -in /etc/kubernetes/pki/sa.key -pubout -out /etc/kubernetes/pki/sa.pub
-  when: sa_pud_stat.stat.isreg is not defined
+  when: sa_pub_stat.stat.isreg is not defined
 
 - name: 软链 sa 证书私钥为 kube-controller-manager 证书私钥
   file: 

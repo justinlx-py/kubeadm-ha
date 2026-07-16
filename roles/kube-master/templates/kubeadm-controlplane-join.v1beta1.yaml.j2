@@ -29,7 +29,7 @@ nodeRegistration:
 ---
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
-kubernetesVersion: v{{ kube_version }}
+kubernetesVersion: {{ kube_version }}
 clusterName: kubernetes
 controlPlaneEndpoint: "{{ kube_apiserver_ip | trim }}:{{ lb_kube_apiserver_port | trim }}"
 certificatesDir: /etc/kubernetes/pki

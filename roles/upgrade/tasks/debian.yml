@@ -6,11 +6,13 @@
     mode: 0644
 
 - name: 添加 Kubernetes GPG 公钥
-  shell: apt-key add /tmp/kubernetes.gpg
+  shell: |
+    mkdir -p /etc/apt/keyrings
+    cp /tmp/kubernetes.gpg /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
 - name: 添加 Kubernetes apt 仓库
   apt_repository:
-    repo: "{{ kubernetes_apt_repo }}"
+    repo: "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] {{ kubernetes_apt_repo.split(' ')[1] }} {{ kubernetes_apt_repo.split(' ')[2] }}"
     state: present
 
 - name: "安装 kubeadm-{{ kube_upgrade_version }}"

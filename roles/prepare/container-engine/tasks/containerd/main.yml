@@ -26,6 +26,14 @@
       dest: "/usr/bin/runc"
       mode: 0755
       remote_src: true
+
+  - name: 下载 Crictl
+    get_url:
+      url: "{{ crictl_download_url }}"
+      dest: "/tmp/crictl.tar.gz"
+
+  - name: 解压并安装 Crictl
+    shell: tar Cxzvf /usr/bin /tmp/crictl.tar.gz
   
   - name: 编写 Containerd 代理配置
     template:

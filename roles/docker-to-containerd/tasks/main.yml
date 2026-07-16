@@ -78,14 +78,14 @@
       name: "{{ item }}"
       state: absent
     with_items:
-      - containerd
-      - containerd-shim-runc-v2
-      - ctr
-      - docker
-      - dockerd
-      - docker-init
-      - docker-proxy
-      - runc
+      - /usr/bin/containerd
+      - /usr/bin/containerd-shim-runc-v2
+      - /usr/bin/ctr
+      - /usr/bin/docker
+      - /usr/bin/dockerd
+      - /usr/bin/docker-init
+      - /usr/bin/docker-proxy
+      - /usr/bin/runc
       - /etc/systemd/system/docker.service
       - /etc/systemd/system/docker.socket
       - /etc/systemd/system/containerd.service

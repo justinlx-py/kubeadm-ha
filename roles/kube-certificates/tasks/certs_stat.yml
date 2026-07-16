@@ -48,7 +48,7 @@
 - name: 读取 sa 证书公钥 stat 信息
   stat: 
     path: /etc/kubernetes/pki/sa.pub
-  register: sa_pud_stat
+  register: sa_pub_stat
 
 - name: 读取 admin 证书私钥 stat 信息
   stat: 

@@ -13,10 +13,10 @@ calico/kube-controllers:v3.30.2
 calico/ctl:v3.30.2
 flannel/flannel:v0.27.2
 flannel/flannel-cni-plugin:v1.7.1-flannel2
-registry.k8s.io/kube-apiserver:v1.33.4
-registry.k8s.io/kube-controller-manager:v1.33.4
-registry.k8s.io/kube-scheduler:v1.33.4
-registry.k8s.io/kube-proxy:v1.33.4
+registry.k8s.io/kube-apiserver:v1.36.2
+registry.k8s.io/kube-controller-manager:v1.36.2
+registry.k8s.io/kube-scheduler:v1.36.2
+registry.k8s.io/kube-proxy:v1.36.2
 registry.k8s.io/pause:3.10
 registry.k8s.io/etcd:3.5.21-0
 registry.k8s.io/coredns/coredns:v1.12.0

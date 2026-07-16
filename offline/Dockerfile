@@ -21,7 +21,7 @@ RUN DEBIAN_FRONTEND=noninteractive; \
       openssh-client; \
     rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED;\
     pip3 install --upgrade pip cffi; \
-    pip3 install ansible==2.10.7 netaddr; \
+    pip3 install "ansible>=9" netaddr; \
     rm -rf /root/.cache; \
     rm -rf /var/lib/apt/lists/*; \
     apt-get clean;

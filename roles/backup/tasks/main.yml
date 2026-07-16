@@ -97,6 +97,13 @@
     format: gz
     force_archive: true
 
+- name: 确保本地备份目录存在
+  file:
+    path: "{{ playbook_dir }}/cluster-backup"
+    state: directory
+  delegate_to: localhost
+  run_once: true
+
 - name: 拉取备份至本地
   fetch:
     src: "{{ kubernetes_latest_back_dir.path }}.tar.gz"

@@ -58,7 +58,7 @@
           <tr>
               <td align="left">Kubernetes</td>
               <td align="left">v1.20, v1.21, v1.22, v1.23, v1.24, v1.25, v1.26, <br>
-                               v1.27, v1.28, v1.29, v1.30, v1.31, v1.32, <strong>v1.33</strong></td>
+                               v1.27, v1.28, v1.29, v1.30, v1.31, v1.32, v1.33, v1.34, <strong>v1.36</strong></td>
           </tr>
           <tr>
               <td align="left">Kube-apiserver lb</td>

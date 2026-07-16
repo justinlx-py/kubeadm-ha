@@ -4,8 +4,6 @@
 #-------------------------------------------------------------------------------------------------------------#
 # 提权操作
 ansible_become: true
-# 忽略警告
-command_warnings: false
 
 #-------------------------------------------------------------------------------------------------------------#
 #-------------------------------------------- 基础参数（内置，不可改变） -----------------------------------------#
@@ -129,9 +127,11 @@ restart_container_manager_force: true
 # Containerd 版本
 runc_version: 1.2.6
 containerd_version: 1.7.28
+crictl_version: 1.30.0
 
 runc_download_url: "https://files.saas.hand-china.com/kubeadm-ha/static/runc/v{{ runc_version }}/runc.{{ host_architecture }}"
 containerd_download_url: "https://files.saas.hand-china.com/kubeadm-ha/static/containerd/v{{ containerd_version }}/containerd-{{ containerd_version }}-linux-{{ host_architecture }}.tar.gz"
+crictl_download_url: "https://files.saas.hand-china.com/kubeadm-ha/static/crictl/v{{ crictl_version }}/crictl-v{{ crictl_version }}-linux-{{ host_architecture }}.tar.gz"
 
 # 数据存储目录
 containerd_storage_dir: "/var/lib/containerd"
@@ -202,7 +202,7 @@ docker_max_concurrent_downloads: 10
 # kubernetes版本
 # apt-cache madison kubeadm
 # yum list kubeadm --showduplicates --enablerepo=kubernetes | sort -r
-kube_version: 1.33.4
+kube_version: 1.36.2
 
 # CentOS
 kubernetes_yum_repo: https://mirrors.aliyun.com/kubernetes-new/core/stable/v{{ kube_version.split('.')[0:2] | join('.') }}/rpm/

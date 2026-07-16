@@ -11,8 +11,9 @@ set -eux;
   apt-get update
   apt-get install -y ca-certificates curl gnupg software-properties-common apt-transport-https dpkg-dev
 
-  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.33/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-  echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /' | tee /etc/apt/sources.list.d/kubernetes.list
+  mkdir -p /etc/apt/keyrings
+  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.36/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.36/deb/ /' | tee /etc/apt/sources.list.d/kubernetes.list
 
   apt-get update
 
@@ -33,9 +34,9 @@ set -eux;
   # 下载k8s
   # 查询版本号apt-cache madison kubeadm | awk '{ print $3 }'
   apt-get -d install -y \
-    kubeadm=1.33.4-1.1 \
-    kubectl=1.33.4-1.1 \
-    kubelet=1.33.4-1.1
+    kubeadm=1.36.2-1.1 \
+    kubectl=1.36.2-1.1 \
+    kubelet=1.36.2-1.1
 
   mv /var/cache/apt/archives/*.deb .
 )
