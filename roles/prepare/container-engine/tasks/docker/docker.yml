@@ -10,7 +10,7 @@
     - /etc/systemd/system/docker.service.d
   
   - name: 下载 Docker
-    shell: curl -fsSLo /tmp/docker-ce.tgz "{{ docker_download_url }}"
+    shell: curl -fsSLo /tmp/docker-ce.tgz --http1.1 "{{ docker_download_url }}"
   
   - name: 解压 Docker 安装包
     shell: >

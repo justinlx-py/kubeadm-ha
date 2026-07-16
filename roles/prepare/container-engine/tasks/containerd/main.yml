@@ -8,10 +8,10 @@
     - "{{ containerd_config.root | default('/var/lib/containerd') }}"
   
   - name: 下载 Containerd
-    shell: curl -fsSLo /tmp/containerd.tar.gz "{{ containerd_download_url }}"
+    shell: curl -fsSLo /tmp/containerd.tar.gz --http1.1 "{{ containerd_download_url }}"
   
   - name: 下载 Runc
-    shell: curl -fsSLo /tmp/runc "{{ runc_download_url }}"
+    shell: curl -fsSLo /tmp/runc --http1.1 "{{ runc_download_url }}"
   
   - name: 解压 Containerd 安装包
     shell: tar Cxzvf /usr /tmp/containerd.tar.gz
@@ -24,7 +24,7 @@
       remote_src: true
 
   - name: 下载 Crictl
-    shell: curl -fsSLo /tmp/crictl.tar.gz "{{ crictl_download_url }}"
+    shell: curl -fsSLo /tmp/crictl.tar.gz --http1.1 "{{ crictl_download_url }}"
 
   - name: 解压并安装 Crictl
     shell: tar Cxzvf /usr/bin /tmp/crictl.tar.gz
