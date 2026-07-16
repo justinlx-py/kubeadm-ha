@@ -1,7 +1,5 @@
 - name: 下载 cri-dockerd
-  get_url:
-    url: "{{ cri_dockerd_download_url }}"
-    dest: "/tmp/cri-dockerd.tgz"
+  shell: curl -fsSLo /tmp/cri-dockerd.tgz "{{ cri_dockerd_download_url }}"
 
 - name: 解压 cri-dockerd 安装包
   shell: >
