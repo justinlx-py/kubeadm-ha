@@ -52,7 +52,7 @@
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
-    --endpoints=https://[127.0.0.1]:2379 | grep {{ inventory_hostname }} | cut -d',' -f1
+    --endpoints=https://127.0.0.1:2379 | grep {{ inventory_hostname }} | cut -d',' -f1
   delegate_to: "{{ (groups['etcd'] | difference(groups['del-etcd']))|first }}"
   register: etcd_member_id
 
@@ -71,7 +71,7 @@
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
-    --endpoints=https://[127.0.0.1]:2379
+    --endpoints=https://127.0.0.1:2379
   delegate_to: "{{ (groups['etcd'] | difference(groups['del-etcd']))|first }}"
   when: etcd_member_id.stdout != ''
 

@@ -4,7 +4,7 @@
     --mount type=bind,src=/etc/kubernetes/pki/etcd,dst=/etc/kubernetes/pki/etcd,options=rbind:ro
     --rm {{ etcd_image }} etcd-health-check
     etcdctl endpoint health
-    --endpoints=https://[127.0.0.1]:2379
+    --endpoints=https://127.0.0.1:2379
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
@@ -20,7 +20,7 @@
     --mount type=bind,src=/etc/kubernetes/pki/etcd,dst=/etc/kubernetes/pki/etcd,options=rbind:ro
     --rm {{ etcd_image }} etcd-list-member
     etcdctl member list
-    --endpoints=https://[127.0.0.1]:2379
+    --endpoints=https://127.0.0.1:2379
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
@@ -34,7 +34,7 @@
     --mount type=bind,src=/etc/kubernetes/pki/etcd,dst=/etc/kubernetes/pki/etcd,options=rbind:ro
     --rm {{ etcd_image }} etcd-add-member
     etcdctl member add {{ etcd_new_member }}
-    --endpoints=https://[127.0.0.1]:2379
+    --endpoints=https://127.0.0.1:2379
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
@@ -53,7 +53,7 @@
     --mount type=bind,src=/etc/kubernetes/pki/etcd,dst=/etc/kubernetes/pki/etcd,options=rbind:ro
     --rm {{ etcd_image }} etcd-health-check
     etcdctl endpoint health
-    --endpoints=https://[127.0.0.1]:2379
+    --endpoints=https://127.0.0.1:2379
     --cacert=/etc/kubernetes/pki/etcd/ca.crt
     --key=/etc/kubernetes/pki/etcd/healthcheck-client.key
     --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt
