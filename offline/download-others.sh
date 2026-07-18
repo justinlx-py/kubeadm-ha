@@ -6,8 +6,10 @@ mkdir -p base/{docker,containerd}
 case "${1:-amd64}" in
   amd64|x86_64)
     curl -Lo base/runc https://github.com/opencontainers/runc/releases/download/v1.2.6/runc.amd64;
-    curl -Lo base/containerd.tar.gz https://github.com/containerd/containerd/releases/download/v1.7.28/containerd-1.7.28-linux-amd64.tar.gz;
-    curl -Lo base/crictl.tar.gz https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.30.0/crictl-v1.30.0-linux-amd64.tar.gz;
+#    curl -Lo base/containerd.tar.gz https://github.com/containerd/containerd/releases/download/v1.7.28/containerd-1.7.28-linux-amd64.tar.gz;
+    curl -Lo base/containerd.tar.gz https://hand-kingnew-application-package.su.bcebos.com/01-basic/k8s/1.36/containerd-1.7.28-linux-amd64.tar.gz;
+    curl -Lo base/containerd.tar.gz https://hand-kingnew-application-package.su.bcebos.com/01-basic/k8s/1.36/crictl-v1.36.0-linux-amd64.tar.gz;
+#    curl -Lo base/crictl.tar.gz https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.36.0/crictl-v1.36.0-linux-amd64.tar.gz;
     curl -Lo base/docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-25.0.5.tgz;
     curl -Lo base/cri-dockerd.tgz https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.18/cri-dockerd-0.3.18.amd64.tgz;
     curl -Lo base/helm.tar.gz https://get.helm.sh/helm-v3.18.5-linux-amd64.tar.gz;
@@ -15,7 +17,7 @@ case "${1:-amd64}" in
   arm64|aarch64)
     curl -Lo base/runc https://github.com/opencontainers/runc/releases/download/v1.2.6/runc.arm64;
     curl -Lo base/containerd.tar.gz https://github.com/containerd/containerd/releases/download/v1.7.28/containerd-1.7.28-linux-arm64.tar.gz;
-    curl -Lo base/crictl.tar.gz https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.30.0/crictl-v1.30.0-linux-arm64.tar.gz;
+    curl -Lo base/crictl.tar.gz https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.36.0/crictl-v1.36.0-linux-arm64.tar.gz;
     curl -Lo base/docker.tgz https://download.docker.com/linux/static/stable/aarch64/docker-25.0.5.tgz;
     curl -Lo base/cri-dockerd.tgz https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.18/cri-dockerd-0.3.18.arm64.tgz;
     curl -Lo base/helm.tar.gz https://get.helm.sh/helm-v3.18.5-linux-arm64.tar.gz;
